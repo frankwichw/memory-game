@@ -11,8 +11,19 @@ class App extends Component {
   state = {
     userScore: 0,
     highScore: 0,
-    cards: card
+    cards: card,
+    clown: "🤡"
   }
+
+  handleLosing = array => {
+
+  };
+
+  newArrayShuffle = array => {
+    console.log(array);
+    console.log("new array reached");
+  };
+
   // function to play game on image click
   clickedTrue = id => {
     // variables that will hold new array and new score
@@ -26,8 +37,13 @@ class App extends Component {
         newArray[i].clicked = true;
         // add to the score
         newScore += 1;
+
         // set the score state to new score
         this.setState({ userScore: newScore });
+        // call function to shuffle array
+        this.newArrayShuffle(newArray);
+        // console logging the clown
+        console.log("you found the clown: 🤡");
       // however if id matches but it has been clicked before
       } else if (newArray[i].id === id && newArray[i].clicked === true){
         // set score to zero
