@@ -1,47 +1,56 @@
 [
     {
         "id": 1,
-        "url": "/components/images/card1.png",
+        "name": "popplio",
+        "url": "/images/popplio.png",
         "clicked": false
     },
     {
         "id": 2,
-        "url": "/components/images/card1.png",
+        "name": "spheal",
+        "url": "/images/spheal.png",
         "clicked": false
     },
     {
         "id": 3,
-        "url": "/components/images/card1.png",
+        "name": "walrein",
+        "url": "/images/walrein.png",
         "clicked": false
     },
     {
         "id": 4,
-        "url": "/components/images/card1.png",
+        "name": "ditto",
+        "url": "/images/ditto.png",
         "clicked": false
     },
     {
         "id": 5,
-        "url": "/components/images/card1.png",
+        "name": "brionne",
+        "url": "/images/brionne.png",
         "clicked": false
     },
     {
         "id": 6,
-        "url": "/components/images/card1.png",
+        "name": "seel",
+        "url": "/images/seel.png",
         "clicked": false
     },
     {
         "id": 7,
-        "url": "/components/images/card1.png",
+        "name": "primarina",
+        "url": "/images/primarina.png",
         "clicked": false
     },
     {
         "id": 8,
-        "url": "/components/images/card1.png",
+        "name": "sealeo",
+        "url": "/images/sealeo.png",
         "clicked": false
     },
     {
         "id": 9,
-        "url": "/components/images/card1.png",
+        "name": "dewgong",
+        "url": "/images/dewgong.png",
         "clicked": false
     }
 ]
