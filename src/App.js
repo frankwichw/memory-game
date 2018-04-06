@@ -32,7 +32,7 @@ class App extends Component {
     this.setState({cards: arrayUnfinished});
   };
 
-  shuffleArrayFinished = array => {
+  shuffleArrayFinished = (array, callback) => {
     let arrayFinished = array;
     let counter = arrayFinished.length;
     while (counter > 0) {
@@ -50,7 +50,7 @@ class App extends Component {
       arrayFinished[i].clicked = false;
     }
 
-    this.setState({cards: arrayFinished});
+     callback(arrayFinished);
   };
 
   handleLosing = array => {
@@ -60,13 +60,17 @@ class App extends Component {
     // set score state to zero
     this.setState({ userScore: setScoreBack });
     // send array to be shuffled and converted
-    this.shuffleArrayFinished(newGameArray);
-
+    this.shuffleArrayFinished(newGameArray, (array) => {
+      console.log(array);
+      // this.setState({cards: newGameArray});
+      console.log("handle losing function reached");
+    });
   };
 
   handleSuccess = array => {
     let arrayToBeShuffled = array;
     let newScore = this.state.userScore;
+    console.log("handle success function reached");
     if (this.state.userScore >= this.state.highScore){
       // add to the score
       newScore += 1;
@@ -121,7 +125,7 @@ class App extends Component {
         url = {card.url}
         id = {card.id}
         key={card.id}
-        clicked = {card.clicked}/>
+        />
         ))}
       </div>
     );

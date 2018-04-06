@@ -1,54 +1,54 @@
 [
     {
-        "id": 1,
+        "id": 0,
         "name": "popplio",
         "url": "/images/popplio.png",
         "clicked": false
     },
     {
-        "id": 2,
+        "id": 1,
         "name": "spheal",
         "url": "/images/spheal.png",
         "clicked": false
     },
     {
-        "id": 3,
+        "id": 2,
         "name": "walrein",
         "url": "/images/walrein.png",
         "clicked": false
     },
     {
-        "id": 4,
+        "id": 3,
         "name": "ditto",
         "url": "/images/ditto.png",
         "clicked": false
     },
     {
-        "id": 5,
+        "id": 4,
         "name": "brionne",
         "url": "/images/brionne.png",
         "clicked": false
     },
     {
-        "id": 6,
+        "id": 5,
         "name": "seel",
         "url": "/images/seel.png",
         "clicked": false
     },
     {
-        "id": 7,
+        "id": 6,
         "name": "primarina",
         "url": "/images/primarina.png",
         "clicked": false
     },
     {
-        "id": 8,
+        "id": 7,
         "name": "sealeo",
         "url": "/images/sealeo.png",
         "clicked": false
     },
     {
-        "id": 9,
+        "id": 8,
         "name": "dewgong",
         "url": "/images/dewgong.png",
         "clicked": false
