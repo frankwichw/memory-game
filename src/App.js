@@ -61,8 +61,9 @@ class App extends Component {
     this.setState({ userScore: setScoreBack });
     // send array to be shuffled and converted
     this.shuffleArrayFinished(newGameArray, (array) => {
-      console.log(array);
-      // this.setState({cards: newGameArray});
+      this.setState({cards: newGameArray});
+      console.log("shuffle finished game array (should all be false below");
+      console.log(newGameArray);
       console.log("handle losing function reached");
     });
   };
@@ -90,17 +91,19 @@ class App extends Component {
     let newArray = this.state.cards.slice(0);
     // for loop iterating through the new array (same as old array currently)
     for(let i = 0; i < newArray.length; i++){
+      // however if id matches but it has been clicked before
+      if (newArray[i].id === id && newArray[i].clicked === true){
+        console.log("if clicked = true statement array:")
+        console.log(newArray);
+        this.handleLosing(newArray);
       // if the id matches the image clicked and it has not been clicked
-      if (newArray[i].id === id && newArray[i].clicked === false){
+      } else if (newArray[i].id === id && newArray[i].clicked === false){
         // change new array clicked property to true
         newArray[i].clicked = true;
         // call function to shuffle array
         this.handleSuccess(newArray);
         // console logging the clown
         console.log("you found the clown: 🤡");
-      // however if id matches but it has been clicked before
-      } else if (newArray[i].id === id && newArray[i].clicked === true){
-        this.handleLosing(newArray);
       }
     }
   };
