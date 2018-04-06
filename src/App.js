@@ -96,6 +96,7 @@ class App extends Component {
         console.log("if clicked = true statement array:")
         console.log(newArray);
         this.handleLosing(newArray);
+        break;
       // if the id matches the image clicked and it has not been clicked
       } else if (newArray[i].id === id && newArray[i].clicked === false){
         // change new array clicked property to true
@@ -104,6 +105,7 @@ class App extends Component {
         this.handleSuccess(newArray);
         // console logging the clown
         console.log("you found the clown: 🤡");
+        break;
       }
     }
   };
