@@ -15,44 +15,92 @@ class App extends Component {
     clown: "🤡"
   }
 
+  shuffleArrayUnfinished = array => {
+    let arrayUnfinished = array;
+    let counter = arrayUnfinished.length;
+    while (counter > 0) {
+        // get random index
+        let index = Math.floor(Math.random() * counter);
+        // decrease counter
+        counter--;
+
+        let lastItem = arrayUnfinished[counter];
+        arrayUnfinished[counter] = arrayUnfinished[index];
+        arrayUnfinished[index] = lastItem;
+    }
+
+    this.setState({cards: arrayUnfinished});
+  };
+
+  shuffleArrayFinished = array => {
+    let arrayFinished = array;
+    let counter = arrayFinished.length;
+    while (counter > 0) {
+        // get random index
+        let index = Math.floor(Math.random() * counter);
+        // decrease counter
+        counter--;
+
+        let lastItem = arrayFinished[counter];
+        arrayFinished[counter] = arrayFinished[index];
+        arrayFinished[index] = lastItem;
+    }
+
+    for(let i = 0; i < arrayFinished.length; i++){
+      arrayFinished[i].clicked = false;
+    }
+
+    this.setState({cards: arrayFinished});
+  };
+
   handleLosing = array => {
+    let newGameArray = array;
+    // set score to zero
+    let setScoreBack = 0;
+    // set score state to zero
+    this.setState({ userScore: setScoreBack });
+    // send array to be shuffled and converted
+    this.shuffleArrayFinished(newGameArray);
 
   };
 
-  newArrayShuffle = array => {
-    console.log(array);
-    console.log("new array reached");
+  handleSuccess = array => {
+    let arrayToBeShuffled = array;
+    let newScore = this.state.userScore;
+    if (this.state.userScore >= this.state.highScore){
+      // add to the score
+      newScore += 1;
+      // set the score and high score state to new score
+      this.setState({ userScore: newScore, highScore: newScore });
+      this.shuffleArrayUnfinished(arrayToBeShuffled);
+    } else {
+      newScore += 1;
+      this.setState({ userScore: newScore });
+      this.shuffleArrayUnfinished(arrayToBeShuffled);
+    }
   };
 
   // function to play game on image click
-  clickedTrue = id => {
-    // variables that will hold new array and new score
+  handleClick = id => {
+    // variables that will hold new array
     let newArray = this.state.cards.slice(0);
-    let newScore = this.state.userScore;
     // for loop iterating through the new array (same as old array currently)
-    for(var i = 0; i < newArray.length; i++){
+    for(let i = 0; i < newArray.length; i++){
       // if the id matches the image clicked and it has not been clicked
       if (newArray[i].id === id && newArray[i].clicked === false){
         // change new array clicked property to true
         newArray[i].clicked = true;
-        // add to the score
-        newScore += 1;
-
-        // set the score state to new score
-        this.setState({ userScore: newScore });
         // call function to shuffle array
-        this.newArrayShuffle(newArray);
+        this.handleSuccess(newArray);
         // console logging the clown
         console.log("you found the clown: 🤡");
       // however if id matches but it has been clicked before
       } else if (newArray[i].id === id && newArray[i].clicked === true){
-        // set score to zero
-        newScore = 0;
-        // set score state to zero
-        this.setState({ userScore: newScore });
+        this.handleLosing(newArray);
       }
     }
   };
+
   // rendering to dom
   render() {
     return (
@@ -68,7 +116,7 @@ class App extends Component {
         {/* mapping (displaying each) card and passing the json object's properties to each */}
         {this.state.cards.map(card => (
         <MemoryCards 
-        clickedTrue = {this.clickedTrue}
+        handleClick = {this.handleClick}
         name = {card.name}
         url = {card.url}
         id = {card.id}
