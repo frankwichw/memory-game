@@ -122,6 +122,9 @@ class App extends Component {
         />
         {/* passing static name div below it */}
         <NameDiv />
+        <div className="col-xl-1 col-lg-1 col-md-1">
+        </div>
+        <div className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
         {/* mapping (displaying each) card and passing the json object's properties to each */}
         {this.state.cards.map(card => (
         <MemoryCards 
@@ -132,6 +135,7 @@ class App extends Component {
         key={card.id}
         />
         ))}
+        </div>
       </div>
     );
   }
