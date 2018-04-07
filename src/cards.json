@@ -2,64 +2,55 @@
     {
         "id": 0,
         "name": "popplio",
-        "image": "/images/popplio.png",
-        "url": "https://cdn.bulbagarden.net/upload/thumb/d/d8/728Popplio.png/500px-728Popplio.png",
+        "url": "./images/popplio.png",
         "clicked": false
     },
     {
         "id": 1,
         "name": "spheal",
-        "image": "/images/spheal.png",
-        "url": "https://cdn.bulbagarden.net/upload/thumb/9/9f/363Spheal.png/500px-363Spheal.png",
+        "url": "./images/spheal.png",
         "clicked": false
     },
     {
         "id": 2,
         "name": "walrein",
-        "image": "/images/walrein.png",
-        "url": "https://cdn.bulbagarden.net/upload/6/61/365Walrein.png",
+        "url": "./images/walrein.png",
         "clicked": false
     },
     {
         "id": 3,
         "name": "ditto",
-        "image": "/images/ditto.png",
-        "url": "https://cdn.bulbagarden.net/upload/3/36/132Ditto.png",
+        "url": "./images/ditto.png",
         "clicked": false
     },
     {
         "id": 4,
         "name": "brionne",
-        "image": "/images/brionne.png",
-        "url": "https://cdn.bulbagarden.net/upload/thumb/c/cd/729Brionne.png/500px-729Brionne.png",
+        "url": "./images/brionne.png",
         "clicked": false
     },
     {
         "id": 5,
         "name": "seel",
-        "image": "/images/seel.png",
-        "url": "https://cdn.bulbagarden.net/upload/1/1f/086Seel.png",
+        "url": "./images/seel.png",
         "clicked": false
     },
     {
         "id": 6,
         "name": "primarina",
-        "image": "/images/primarina.png",
-        "url": "https://cdn.bulbagarden.net/upload/thumb/8/89/730Primarina.png/500px-730Primarina.png",
+        "url": "./images/primarina.png",
         "clicked": false
     },
     {
         "id": 7,
         "name": "sealeo",
-        "image": "/images/sealeo.png",
-        "url": "https://cdn.bulbagarden.net/upload/f/f6/364Sealeo.png",
+        "url": "./images/sealeo.png",
         "clicked": false
     },
     {
         "id": 8,
         "name": "dewgong",
-        "image": "/images/dewgong.png",
-        "url": "https://cdn.bulbagarden.net/upload/c/c7/087Dewgong.png",
+        "url": "./images/dewgong.png",
         "clicked": false
     }
 ]
